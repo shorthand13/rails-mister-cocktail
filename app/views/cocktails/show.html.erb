@@ -1,5 +1,8 @@
 
 <div class="container">
+  <% if @cocktail.photo.present? %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
   <h1><%= @cocktail.name %></h1>
   <%= link_to "Back to all cocktails", root_path %>
@@ -28,10 +31,10 @@
         </tbody>
       </table>
     </div>
+
     <div class="col-sm-12 col-md-6">
       <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
     </div>
+
   </div>
-
-
 </div>
