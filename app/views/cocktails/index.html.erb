@@ -1,21 +1,10 @@
-<div class="banner">
-  <div class="banner-content">
-    <h1>Le Wagon's cocktails</h1>
-    <p>Awesome beverages for developers nightlife</p>
-
-  </div>
-</div>
-
-
-<div class="container">
-  <h1> My creative cocktails</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcvksaiua/image/upload/v1565775188/patrick-tomasso-GXXYkSwndP4-unsplash_sozes9.jpg);">
+  <div class="container">
+    <h1> My creative cocktails</h1>
     <p> Drink moderately</p>
       <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-md" %>
-        <% @cocktails.each do |cocktail| %>
-    <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
-  <% end %>
+  </div>
 </div>
-
 
 <div class="row my-4 py-4">
   <% @cocktails.each do |cocktail| %>
