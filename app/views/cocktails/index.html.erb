@@ -7,10 +7,34 @@
 </div>
 
 
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
-<% end %>
+<div class="container">
+  <h1> My creative cocktails</h1>
+    <p> Drink moderately</p>
+      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-md" %>
+        <% @cocktails.each do |cocktail| %>
+    <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+  <% end %>
+</div>
 
 
- <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-md" %>
+<div class="row my-4 py-4">
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-4 my-3">
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="card" style="width: 18rem;">
 
+        <% if cocktail.photo.present? %>
+          <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+        <% else %>
+          <%= cl_image_tag 'https://res.cloudinary.com/dcvksaiua/image/upload/v1565312883/sample.jpg', height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+        <% end %>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <a href="#" class="btn btn-primary">Add to tab</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
