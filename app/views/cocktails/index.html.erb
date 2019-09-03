@@ -2,13 +2,14 @@
   <div class="container">
     <h1> My creative cocktails</h1>
     <p> Drink moderately</p>
-      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-md" %>
+      <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-warning btn-md" %>
   </div>
 </div>
 
 <div class="row my-4 py-4">
   <% @cocktails.each do |cocktail| %>
-  <div class="col-4 my-3">
+
+  <div class="col-3 mx-2 my-3 ">
     <%= link_to cocktail_path(cocktail) do %>
       <div class="card" style="width: 18rem;">
 
@@ -23,9 +24,8 @@
           <a href="#" class="btn btn-primary">Add to tab</a>
         </div>
       </div>
-
-
     <% end %>
   </div>
+
   <% end %>
 </div>
